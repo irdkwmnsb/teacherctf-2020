@@ -15,6 +15,6 @@ text = input()
 encrypted =  ''
 
 for i in text:
-		encrypted+=dict[i]
+	encrypted+=dict[i]
 
 print(encrypted)
