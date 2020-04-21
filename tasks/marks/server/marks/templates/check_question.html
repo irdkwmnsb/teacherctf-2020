@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>question</title>
+</head>
+<body>
+	{% autoescape off %}  
+	<h2>{{question.title}}</h2>
+	<p>{{ question.text }}</p>
+	{% endautoescape %} 
+</body>
+</html>

@@ -1,0 +1,32 @@
+version: '3.0'
+
+services:
+  marks:
+    build:
+      context: .
+      dockerfile: docker_config/backend/Dockerfile
+    expose:
+      - 8000
+    volumes:
+      -  ./marks/static:/marks/static
+    restart: on-failure
+
+  bot:
+    build: 
+      context: .
+      dockerfile: docker_config/bot/Dockerfile
+    restart: on-failure
+
+  redis:
+    image: redis:5.0.5-alpine
+    restart: on-failure
+  
+  nginx:
+    image: nginx:1.17
+    ports:
+      - "10010:80"
+    volumes:
+      - ./marks/static:/static
+      - ./docker_config/nginx/conf:/etc/nginx/conf.d
+    depends_on:
+      - marks

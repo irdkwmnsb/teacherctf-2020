@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  storage:
+    build: .
+    ports:
+      - 9999:80
+

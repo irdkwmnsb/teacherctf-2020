@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %} 
+{% autoescape off %}  
+<div class="content justify-content-center mt-5">
+<div class="container border justify-content-center p-3 mb-5 bg-white">
+    <div class="row">
+        <div class="ml-4">
+            <h2>Вопрос #{{question.id}}</h2>
+            <p>Отправитель: {{ question.author }}</p>
+            <p>Получатель: Teacher</p>
+            <p>Просмотрено: {{question.seen}}</p>
+			<h3>Тема: {{question.title}}</h3>
+			<p>Текст вопроса: {{ question.text }}</p>
+        </div>
+    </div>
+    </div>
+    </div>
+{% endautoescape %} 
+{% endblock %}
