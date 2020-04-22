@@ -97,7 +97,7 @@ def main():
 		print('[-] exiting')
 		return 0
 
-	print('[+] statring checking questions')
+	print('[+] starting checking questions')
 
 	while True:
 		questions = redis_instance.keys()
