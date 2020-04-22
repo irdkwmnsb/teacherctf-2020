@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Super secret recipe storage</title>
+</head>
+<body>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/static?file=main.css">
+	<h3></h3>
+	<div class="container">
+	<div class="d-flex justify-content-center">
+		<div class="card p-3">
+			<div class="card-header d-flex justify-content-center">
+				<h3>&#128274;</h3>
+			</div>
+			<div>
+				<p class="card-text" style="color:white">
+					Добро пожаловать в секретное хранилище. У нас нет регистрации, только шеф может получить доступ к рецепту.
+				</p>
+				<p style="color:red; text-align: center;">{{ error }}</p>
+				</ul>
+				<form method="POST">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="username" name="username">
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="password" name="password">
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Войти" class="form-control" style="color:black; background-color: #FFC312; border:none;">
+					</div>
+				</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

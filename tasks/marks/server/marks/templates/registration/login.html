@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Войти</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href='{% static "css/main.css" %}'>
+</head>
+<body style="background-color: #f3f5f7;">
+    <div class="container" style="padding-top: 48px;">
+        <div class="row">
+            <div class="col" style="max-width: 528px; margin: auto; padding: 0;">
+                <div class="jumbotron" style="background-color: #fff; padding-top: 10px; padding-bottom: 10px;">
+                    <div class="jumbo-header" style="padding: 15px;">
+                        <img src='{% static "images/login.png" %}' alt="" width="45px"
+                            align="left">
+                        <h1
+                            style="display: block; text-align: center; font-size: 26px; font-weight: 600; padding-left: 54px;">
+                            Вход в электронный дневник</h1>
+                    </div>
+                    {% for error in form.errors %}
+                    <div class="alert alert-danger row justify-content-center" role="alert">
+                        Неверный логин или пароль.
+                    </div>
+                    {% endfor %}
+                    <form method="POST" class="login-form" style="margin-top: 25px; padding: 20px;">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Имя пользователя" name="username">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Пароль" name="password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Войти</button>
+                    </form>
+
+                    <hr class="my-4">
+
+                    <p style="font-size: 16px; text-align: center;">Нет аккаунта?<a href="/register">Зарегистрироваться</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</html>

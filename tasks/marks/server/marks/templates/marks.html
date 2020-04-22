@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row h-100 justify-content-center mr-0 ml-0" style="height: 100%;">
+	<div style="border-right:50px solid #546e7a;" class="col-1 line"></div>
+<div class="col-8 pr-0 pl-0 mr-0 ml-0">
+	<div class="justify-content-center pr-0 pl-0" style="background-color: white;">
+		<table class="table table-bordered">
+  <thead>
+    <tr style="background-color: #ebf2f5;">
+      <th scope="col">Предмет</th>
+      <th scope="col">Оценки</th>
+      <th scope="col">Средний балл</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for sub in subjects %}
+    <tr>
+      <td>{{ sub.title }}</td>
+      <td>{% for mark in sub.marks %} {{ mark }} {% endfor %}</td>
+      <td> {{ sub.ar_mean }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+	</div>
+</div>
+	<div style="border-left:50px solid #546e7a;" class="col-1 line"></div>
+
+{% endblock %}

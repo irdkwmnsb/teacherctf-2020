@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href='{% static "css/main.css" %}'>
+</head>
+<body style="background-color: #f3f5f7;">
+
+    <div class="container" style="padding: 0; padding-top: 48px; width: 708px; margin: auto;">
+        <div class="row">
+            <div class=" col">
+                <img src='{% static "images/login.png" %}' alt="" align="left" width="46"
+                    style="margin-left: 15px;">
+                <h1 style="font-size: 26px; margin-left: 80px; margin-top: 10px; font-weight: 600;">Регистрация</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="jumbotron jumbotron-fluid">
+                    <h1 class="display-6">Личные данные</h1>
+                       {% if error_context %}
+    {% for key,error in error_context.items %}
+
+    <div class="alert alert-danger row justify-content-center" role="alert">
+        {{error}}
+    </div>{% endfor %}
+    {% endif %}
+          {{ form.errors}}
+
+                    <form action="" method="POST">
+                      {% csrf_token %}
+                    <div class="form">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                {{ form.login }}
+                                <small class="text-muted">
+                                        Поле обязательно для заполнения.<br> Используйте латинские буквы и цифры.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                {{ form.password }}
+                                <small class="text-muted">
+                                    Пароль должен состоять из<br> латинских букв и цифр.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form">
+                        <div class="form-inline">
+                            <div class="form-group">
+                                {{ form.password1 }}
+                                <small class="text-muted">
+                                  Повторите пароль, чтобы не ошибиться.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary mt-4"
+                        style="padding: 32px; padding-top: 10px; padding-bottom: 10px; font-size: 18px;">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+</html>
