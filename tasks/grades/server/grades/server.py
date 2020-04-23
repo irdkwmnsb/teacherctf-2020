@@ -5,7 +5,7 @@ import secrets
 from grades import logger as main_logger
 from grades.task import Task
 
-FLAG = "CadetCTF{216d0d9e33efaa73a805bb8148163415}"
+FLAG = "TeacherCTF{nkaOmClQRjqJ1WZNZs5Wag}"
 
 
 async def handle_connection(reader: asyncio.StreamReader, writer: asyncio.StreamWriter):

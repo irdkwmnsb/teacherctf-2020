@@ -9,4 +9,4 @@ P.s. Если вы используете ОС windows вам возможно �
 
 
 ## Флаг
-```CadetCTF{216d0d9e33efaa73a805bb8148163415}```
+```TeacherCTF{nkaOmClQRjqJ1WZNZs5Wag}```
