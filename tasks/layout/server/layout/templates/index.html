@@ -1,0 +1,52 @@
+<html lang="EN">
+<head>
+    <title>Layout</title>
+    <script type="text/javascript" src="static/js/paper-full.min.js"></script>
+    <script type="text/paperscript" src="static/js/canvaslogic.js" canvas="classroom">
+    </script>
+    <script type="text/javascript">
+        var student_count = {{ session["cur_task"][0]}};
+        var hates = {{ session["cur_task"][1]}};
+        var done = {{ session["done"] }};
+        var total = {{ config["TASKS_N"] }};
+        var top_text = `Sit dem students (${done}/${total})`;
+        var submit = function(pairs) {
+            return new Promise(function(resolve, reject) {
+                try {
+                    fetch("{{url_for('check')}}", {
+                        method: "POST",
+                        body: JSON.stringify(pairs),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then((resp) => resp.json()).then((json) => {
+                        if (json.status === "ok") {
+                            resolve(json.msg);
+                        } else {
+                            reject(json.msg);
+                        }
+                    });
+                } catch (error) {
+                    reject("Unknown error. Try again.");
+                }
+            });
+        }
+    </script>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Scale canvas with resize attribute to full size */
+        canvas[resize] {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<canvas id="classroom" resize></canvas>
+</body>
+</html>
