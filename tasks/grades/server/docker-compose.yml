@@ -1,0 +1,7 @@
+version: '3'
+services:
+  grades:
+    build: .
+    ports:
+      - 127.0.0.1:1337:1337 # CHANGE ME
+    restart: always
