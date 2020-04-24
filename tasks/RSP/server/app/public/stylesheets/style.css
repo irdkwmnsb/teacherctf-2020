@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+
+
+* {
+ font-size: 100%;
+ font-family: 'Roboto';
+}
+
+.blurred {
+    width: 100%;
+    height: 100%;
+    filter: blur(0);
+    background-color: rgba(200, 200, 200, 0.98);
+    position: absolute;
+    z-index: 1;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.wrapper .form-control {
+    border: solid 2px #e9ecef;
+}
+
+.col {
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #fff;
+    padding-top: 20px;
+    border: solid 2px #aaa;
+    margin: auto;
+    height: 450px;
+}
+
+.card-body {
+    margin-top: 20px;
+    border-top: solid 2px #aaa;
+    background-color: #eee;
+}
+
+.card-title {
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'Roboto Mono';
+    margin-bottom: 0;
+}
+
+.card .btn {
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+#history {
+    border: solid 2px #aaa;
+    border-radius: 3px;
+    padding: 20px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.round-card {
+    height: auto;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.round-card .card-body {
+    margin-top: 0;
+    background-color: #fff;
+}
+
+.green-card {
+    background-color: lightgreen;
+}
+
+.yellow-card {
+    background-color: sandybrown;
+}
+
+.red-card {
+    background-color: lightcoral;
+}
+
+.round-card .card-text {
+    font-family: 'Roboto Mono';
+}
+
+.result-text {
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.announcement {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    z-index: 2;
+}
+
+#btn-flag {
+    margin-bottom: 20px;
+    margin-top: 40px;
+    width: 100%;
+    text-transform: uppercase;
+}

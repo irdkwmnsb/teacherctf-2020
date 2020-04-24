@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  rsp:
+    build: .
+    ports:
+      - 7777:3000
+      - 3001:3001
