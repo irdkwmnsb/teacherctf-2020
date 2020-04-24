@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>RSP</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body>
+    <div class="blurred"></div>
+    <div class="wrapper">
+        <div id="name-input" class="input-group input-group-lg flex-nowrap"
+            style="width: 50%; margin: auto; margin-top: 15%; border-radius: 10px;">
+            <div class="input-group-prepend">
+                <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" placeholder="Имя пользователя" id="username">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" id="btn-start">Начать игру</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row" style="height: 450px;">
+            <div class="col">
+                <div class="card" style="width: 350px;">
+                    <img src="images/person.png" class="card-img-top" alt="person.png"
+                        style="width: 150px; margin: auto;">
+                    <div class="card-body">
+                        <h5 class="card-title" id="player-name">Игрок</h5>
+                        <p class="card-text">Побед: <span id="user-wins">0</span></p>
+                        <p class="card-text">Процент побед: <span id="user-perc">0</span>%</p>
+                        <p class="card-text">Баллов: <span id="user-score">0</span></p>
+                        <button type="button" id="rock" class="btn-game btn btn-info">Камень</button>
+                        <button type="button" id="scissors" class="btn-game btn btn-info">Ножницы</button>
+                        <button type="button" id="paper" class="btn-game btn btn-info">Бумага</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col" id="history"></div>
+            <div class="col">
+                <div class="card" style="width: 350px;">
+                    <img src="images/bot.png" class="card-img-top" alt="bot.png" style="width: 150px; margin: auto;">
+                    <div class="card-body">
+                        <h5 class="card-title">bot</h5>
+                        <p class="card-text">Побед: <span id="bot-wins">0</span></p>
+                        <p class="card-text">Процент побед: <span id="bot-perc">0</span>%</p>
+                        <p class="card-text"> Баллов: <span id="bot-score">0</span></p>
+                        <h4
+                            style="text-transform: uppercase; text-align: center; font-size: 18px; font-family: 'Roboto Mono'; display: block; margin-top: 20px; padding: 12px; background-color: #ddd; border: solid 1px #aaa; border-radius: 5px;">
+                            ИСКУССТВЕННЫЙ ИНТЕЛЛЕКТ</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin: auto; width: 80%;">
+            <div class="col">
+                <button class="btn btn-success btn-lg" id="btn-flag">
+                    Получить флаг</button>
+            </div>
+        </div>
+        <div class="row" style="margin: auto; width: 80%;">
+            <div class="col" id="info-col">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="javascripts/script.js"></script>
+</html>
