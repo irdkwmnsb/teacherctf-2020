@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+  students-quite-literate:
+    build: ./
+    ports:
+      - 33501:80
+    volumes: # FIXME
+      - ./app:/app
+
+  mysql:
+    build: ./mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: susekere
+      MYSQL_DATABASE: app
