@@ -4,8 +4,6 @@ services:
     build: ./
     ports:
       - 33501:80
-    volumes: # FIXME
-      - ./app:/app
 
   mysql:
     build: ./mysql
