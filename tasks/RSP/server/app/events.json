@@ -1,6 +1,6 @@
 {
     "connected": "Connection to the socket server is established",
-    "points_error": "Вам нужно набрать как минимум <strong>10</strong> очков, имея при этом <strong>100%</strong> побед для того, чтобы получить флаг",
+    "points_error": "Получите не меньше 10 баллов чтобы получить флаг",
     "percent_error": "Похоже, ваш процент побед немного ниже ожидаемого! Попробуйте добиться стопроцентного винрейта!",
     "flag": "Достойно! Вот ваш флаг: <strong>TeacherCTF{n1c3_r4nd0m_br0}</strong>"
 }
