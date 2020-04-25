@@ -1,8 +1,8 @@
 let express = require('express');
 let app = express();
-let WebSocketServer = new require('ws');
 let seedrandom = require('seedrandom');
 let events = require('./events.json');
+var expressWs = require('express-ws')(app);
 
 
 app.use(express.static('public'));
@@ -31,17 +31,13 @@ class User {
 let clients = {};
 let users = {};
 
-let webSocketServer = new WebSocketServer.Server({
-    port: 3001
-});
-
-webSocketServer.on('connection', function (ws) {
+app.ws('/socket', function (ws, req) {
     let id = Math.random();
     clients[id] = ws;
     users[id] = 0;
 
     console.log('[+] Connected: ' + id);
-    clients[id].send(JSON.stringify({ 'action': 'announcement', 'error': false, 'data': events['connected'] }));
+    clients[id].send(JSON.stringify({'action': 'announcement', 'error': false, 'data': events['connected']}));
 
 
     ws.on('message', function (message) {
@@ -60,14 +56,32 @@ webSocketServer.on('connection', function (ws) {
                     case 'rock':
 
                         if (bot == 0) {
-                            clients[id].send(JSON.stringify({ 'action': 'new_round', 'round': users[id].round, 'user': 'камень', 'bot': 'камень', 'res': 'ничья' }));
+                            clients[id].send(JSON.stringify({
+                                'action': 'new_round',
+                                'round': users[id].round,
+                                'user': 'камень',
+                                'bot': 'камень',
+                                'res': 'ничья'
+                            }));
                         }
                         if (bot == 1) {
-                            clients[id].send(JSON.stringify({ 'action': 'new_round', 'round': users[id].round, 'user': 'камень', 'bot': 'ножницы', 'res': 'победа' }));
+                            clients[id].send(JSON.stringify({
+                                'action': 'new_round',
+                                'round': users[id].round,
+                                'user': 'камень',
+                                'bot': 'ножницы',
+                                'res': 'победа'
+                            }));
                             users[id].wins++;
                         }
                         if (bot == 2) {
-                            clients[id].send(JSON.stringify({ 'action': 'new_round', 'round': users[id].round, 'user': 'камень', 'bot': 'бумага', 'res': 'поражение' }));
+                            clients[id].send(JSON.stringify({
+                                'action': 'new_round',
+                                'round': users[id].round,
+                                'user': 'камень',
+                                'bot': 'бумага',
+                                'res': 'поражение'
+                            }));
                             users[id].loses++;
                         }
                         break;
@@ -75,14 +89,32 @@ webSocketServer.on('connection', function (ws) {
                     case 'scissors':
 
                         if (bot == 0) {
-                            clients[id].send(JSON.stringify({ 'action': 'new_round', 'round': users[id].round, 'user': 'ножницы', 'bot': 'камень', 'res': 'поражение' }));
+                            clients[id].send(JSON.stringify({
+                                'action': 'new_round',
+                                'round': users[id].round,
+                                'user': 'ножницы',
+                                'bot': 'камень',
+                                'res': 'поражение'
+                            }));
                             users[id].loses++;
                         }
                         if (bot == 1) {
-                            clients[id].send(JSON.stringify({ 'action': 'new_round', 'round': users[id].round, 'user': 'ножницы', 'bot': 'ножницы', 'res': 'ничья' }));
+                            clients[id].send(JSON.stringify({
+                                'action': 'new_round',
+                                'round': users[id].round,
+                                'user': 'ножницы',
+                                'bot': 'ножницы',
+                                'res': 'ничья'
+                            }));
                         }
                         if (bot == 2) {
-                            clients[id].send(JSON.stringify({ 'action': 'new_round', 'round': users[id].round, 'user': 'ножницы', 'bot': 'бумага', 'res': 'победа' }));
+                            clients[id].send(JSON.stringify({
+                                'action': 'new_round',
+                                'round': users[id].round,
+                                'user': 'ножницы',
+                                'bot': 'бумага',
+                                'res': 'победа'
+                            }));
                             users[id].wins++;
                         }
                         break;
@@ -90,29 +122,59 @@ webSocketServer.on('connection', function (ws) {
                     case 'paper':
 
                         if (bot == 0) {
-                            clients[id].send(JSON.stringify({ 'action': 'new_round', 'round': users[id].round, 'user': 'бумага', 'bot': 'камень', 'res': 'победа' }));
+                            clients[id].send(JSON.stringify({
+                                'action': 'new_round',
+                                'round': users[id].round,
+                                'user': 'бумага',
+                                'bot': 'камень',
+                                'res': 'победа'
+                            }));
                             users[id].wins++;
                         }
                         if (bot == 1) {
-                            clients[id].send(JSON.stringify({ 'action': 'new_round', 'round': users[id].round, 'user': 'бумага', 'bot': 'ножницы', 'res': 'поражение' }));
+                            clients[id].send(JSON.stringify({
+                                'action': 'new_round',
+                                'round': users[id].round,
+                                'user': 'бумага',
+                                'bot': 'ножницы',
+                                'res': 'поражение'
+                            }));
                             users[id].loses++;
                         }
                         if (bot == 2) {
-                            clients[id].send(JSON.stringify({ 'action': 'new_round', 'round': users[id].round, 'user': 'бумага', 'bot': 'бумага', 'res': 'ничья' }));
+                            clients[id].send(JSON.stringify({
+                                'action': 'new_round',
+                                'round': users[id].round,
+                                'user': 'бумага',
+                                'bot': 'бумага',
+                                'res': 'ничья'
+                            }));
                         }
 
                         break;
                 }
-                clients[id].send(JSON.stringify({ 'action': 'user_stats', 'user': users[id] }))
+                clients[id].send(JSON.stringify({'action': 'user_stats', 'user': users[id]}))
                 break;
 
             case 'get_flag':
                 if (users[id].round == 0 | users[id].wins * users[id].wins / users[id].round < 10)
-                    clients[id].send(JSON.stringify({ 'action': 'announcement', 'error': true, 'data': events['points_error'] }));
+                    clients[id].send(JSON.stringify({
+                        'action': 'announcement',
+                        'error': true,
+                        'data': events['points_error']
+                    }));
                 else if (users[id].wins < users[id].round)
-                    clients[id].send(JSON.stringify({ 'action': 'announcement', 'error': true, 'data': events['percent_error'] }));
+                    clients[id].send(JSON.stringify({
+                        'action': 'announcement',
+                        'error': true,
+                        'data': events['percent_error']
+                    }));
                 else
-                    clients[id].send(JSON.stringify({ 'action': 'announcement', 'error': false, 'data': events['flag'] }));
+                    clients[id].send(JSON.stringify({
+                        'action': 'announcement',
+                        'error': false,
+                        'data': events['flag']
+                    }));
                 break;
         }
     });
