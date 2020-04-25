@@ -129,6 +129,8 @@ class Task():
 
     def check_task(self, answer):
         answer = answer.split()
+        if len(answer) != len(self.current_ans):
+            return False
         correct = True
         for i, j in zip(answer, self.current_ans):
             if j is None:

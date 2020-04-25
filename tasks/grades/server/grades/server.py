@@ -24,6 +24,7 @@ async def handle_connection(reader: asyncio.StreamReader, writer: asyncio.Stream
             task_s = task.get_task()
             writer.write(task_s.encode())
             line = await reader.readuntil()
+            logger.info(f"{len(line)} bytes received")
             try:
                 correct = task.check_task(line)
             except Exception as e:
@@ -37,11 +38,15 @@ async def handle_connection(reader: asyncio.StreamReader, writer: asyncio.Stream
             else:
                 writer.write("Неверно\n".encode())
                 logger.info("incorrect")
+                break
         except Exception as e:
             writer.write("Непредвиденная ошибка\n".encode())
             logger.error(e)
-    logger.info("solved")
-    flag = FLAG
-    writer.write(f"Ваш флаг: {flag}\n".encode())
+            break
+    if remaining <= 0:
+        logger.info("solved")
+        flag = FLAG
+        writer.write(f"Ваш флаг: {flag}\n".encode())
+    writer.write(f"До свидания!\n".encode())
     writer.write_eof()
     await writer.wait_closed()
