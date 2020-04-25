@@ -3,7 +3,7 @@ services:
   students-quite-literate:
     build: ./
     ports:
-      - 33011:80
+      - 127.0.0.1:33011:80
 
   mysql:
     build: ./mysql
