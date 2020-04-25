@@ -3,5 +3,5 @@ services:
   grades:
     build: .
     ports:
-      - 127.0.0.1:33022:1337
+      - 33022:1337
     restart: always
