@@ -25,7 +25,7 @@ SECRET_KEY = 'jz(uv(7yte(w!)^0b$%i4enek$-h)hj4_c61s%h5w1u7fsn^6('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['marks', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

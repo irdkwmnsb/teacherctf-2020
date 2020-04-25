@@ -3,5 +3,5 @@ services:
   layout:
     build: ./
     ports:
-      - 8080:8080
+      - 127.0.0.1:30023:8080
     restart: always

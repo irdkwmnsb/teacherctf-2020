@@ -1,4 +1,4 @@
-let socket = new WebSocket('ws://' + location.host.split(':')[0] + ":3001");
+let socket = new WebSocket((location.protocol === "https:" ? "wss://" : "ws://") + location.host + "/socket");
 let type = 0
 
 socket.onmessage = function (event) {
@@ -57,20 +57,19 @@ socket.onmessage = function (event) {
 $('#btn-start').click(function () {
     if ($('#username')[0].value == '') {
         $('#name-input').css('border', 'solid 3px #f55');
-    }
-    else {
+    } else {
         $('#player-name').html($('#username')[0].value)
         $('.wrapper').css('display', 'none');
         $('.blurred').css('display', 'none');
-        socket.send(JSON.stringify({ 'action': 'new_name', 'name': $('#username')[0].value }));
+        socket.send(JSON.stringify({'action': 'new_name', 'name': $('#username')[0].value}));
 
     }
 });
 
 $('#btn-flag').click(function () {
-    socket.send(JSON.stringify({ 'action': 'get_flag' }));
+    socket.send(JSON.stringify({'action': 'get_flag'}));
 });
 
 $('.btn-game').click(function (el) {
-    socket.send(JSON.stringify({ 'action': 'btn_click', 'btn': el.target.id }));
+    socket.send(JSON.stringify({'action': 'btn_click', 'btn': el.target.id}));
 });

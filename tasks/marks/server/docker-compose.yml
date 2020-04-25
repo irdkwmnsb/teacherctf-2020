@@ -5,10 +5,6 @@ services:
     build:
       context: .
       dockerfile: docker_config/backend/Dockerfile
-    expose:
-      - 8000
-    volumes:
-      -  ./marks/static:/marks/static
     restart: on-failure
 
   bot:
@@ -24,7 +20,7 @@ services:
   nginx:
     image: nginx:1.17
     ports:
-      - "10010:80"
+      - 127.0.0.1:33008:80
     volumes:
       - ./marks/static:/static
       - ./docker_config/nginx/conf:/etc/nginx/conf.d
