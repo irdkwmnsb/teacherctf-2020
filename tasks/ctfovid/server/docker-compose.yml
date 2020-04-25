@@ -3,7 +3,8 @@ services:
   ctfovid:
     image: sebp/lighttpd
     ports:
-      - 127.0.0.1:30080:80
+      - 127.0.0.1:33002:80
     volumes:
       - ./root:/var/www/localhost/htdocs
     tty: true
+    restart: always
