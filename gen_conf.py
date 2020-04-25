@@ -2,6 +2,13 @@
 conf = """ssl_certificate /etc/letsencrypt/live/2020.teacherctf.com-0001/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/2020.teacherctf.com-0001/privkey.pem;
 ssl_trusted_certificate /etc/letsencrypt/live/2020.teacherctf.com-0001/chain.pem;
+server {
+        listen 80;
+        listen [::]:80;
+        server_name *.2020.teacherctf.com;
+        add_header Strict-Transport-Security "max-age=31536000";
+        return 301 https://$host$request_uri;
+}
 """
 
 import os
