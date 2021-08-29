@@ -1,4 +1,4 @@
-FROM python:3.9-alpine
+FROM python:3.9-bullseye
 
 # Check available versions here: https://www.ubuntuupdates.org/package/google_chrome/stable/main/base/google-chrome-stable
 ARG CHROME_VERSION="81.0.4044.138-1"
