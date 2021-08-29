@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options
 import requests
 import redis
 import json
+import traceback
 import time
 
 
@@ -30,6 +31,7 @@ def bot_init():
 		return driver
 	except:
 		print('[-] webdriver creation failed')
+		traceback.print_exc()
 		return False
 	
 
