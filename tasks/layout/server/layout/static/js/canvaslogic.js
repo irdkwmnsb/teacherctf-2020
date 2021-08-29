@@ -10,11 +10,11 @@ text.style = {
     justification: 'center'
 };
 
-var desk_w = 100;
-var desk_h = 70;
-var desk_vd = 90;
-var desk_hd_1 = 15;
-var desk_hd_2 = 100;
+var desk_w = 60;
+var desk_h = 50;
+var desk_vd = 35;
+var desk_hd_1 = 10;
+var desk_hd_2 = 80;
 var desk_r = 10;
 var desks_group = new Group();
 var desk_default_color = "burlywood";
@@ -48,8 +48,8 @@ desks_group.fillColor = desk_default_color;
 desks_group.bounds.center = view.center;
 
 var texts_group = new Group();
-var text_vd = 70;
-var text_hd = 70;
+var text_vd = 40;
+var text_hd = 40;
 var text_row_count = 10;
 
 
@@ -61,11 +61,11 @@ for (var i = 0; i < student_count; i++) {
     text.style = {
         fontFamily: 'Helvetica',
         fontWeight: 'bold',
-        fontSize: 30,
+        fontSize: 15,
         fillColor: 'Black',
         justification: 'center'
     };
-    var rect = new Rectangle(text_point - (new Point(30, 40)), new Size(60, 60));
+    var rect = new Rectangle(text_point - (new Point(15, 20)), new Size(30, 30));
     var rect_path = new Path.Rectangle(rect);
     rect_path.fillColor = "grey";
     cur_text_group.addChild(rect_path);
@@ -82,9 +82,14 @@ for (var i = 0; i < student_count; i++) {
 }
 
 texts_group.position = view.center;
-texts_group.position += new Point(0, 500);
+texts_group.position += new Point(0, view.size.height/2 - 80);
 
 var lines_group = new Group();
+
+function getStrokeWidth(pnt_from, pnt_to) {
+    return Math.min(Math.max((85 - pnt_from.getDistance(pnt_to)) * 3, 1), 50);
+}
+
 for (var i in hates) {
     var from = hates[i][0];
     var to = hates[i][1];
@@ -93,7 +98,7 @@ for (var i in hates) {
     var pnt_to = texts_group.children[to].position;
     edge.add(pnt_from, pnt_to);
     edge.strokeColor = "red";
-    edge.strokeWidth = Math.min(Math.max((150 - pnt_from.getDistance(pnt_to)) * 2, 1), 50);
+    edge.strokeWidth = getStrokeWidth(pnt_from, pnt_to);
     texts_group.children[from].to.push([texts_group.children[to], edge]);
     texts_group.children[to].to.push([texts_group.children[from], edge]);
     lines_group.addChild(edge);
@@ -105,7 +110,7 @@ function recalc_edge(text, j) {
     var pnt_to = text.to[j][0].position;
     edge.firstSegment.point = pnt_from;
     edge.lastSegment.point = pnt_to;
-    edge.strokeWidth = Math.min(Math.max((150 - pnt_from.getDistance(pnt_to)) * 2, 1), 50);
+    edge.strokeWidth = getStrokeWidth(pnt_from, pnt_to);
 }
 
 function recalc_edges(text) {
@@ -210,7 +215,7 @@ var submit_group = new Group();
 submit_group.addChild(submit_button);
 submit_group.addChild(submit_text);
 submit_group.position = view.center;
-submit_group.position -= new Point(0, 500);
+submit_group.position += new Point(0, view.size.height/2 - 80);
 submit_group.visible = false;
 
 submit_group.onClick = function () {
