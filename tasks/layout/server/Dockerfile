@@ -14,4 +14,6 @@ COPY ./ ./
 
 USER nobody:nogroup
 
+EXPOSE 8080
+
 CMD gunicorn --workers 4 --bind 0.0.0.0:8080 'layout:app'
