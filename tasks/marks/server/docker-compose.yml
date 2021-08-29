@@ -26,6 +26,7 @@ services:
       - marks
     environment:
       - VIRTUAL_HOST=marks.ctf.sicamp.ru
+    restart: unless-stopped
     networks:
       - proxy
 networks:
