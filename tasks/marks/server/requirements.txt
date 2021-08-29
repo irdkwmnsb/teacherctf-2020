@@ -10,3 +10,4 @@ requests
 selenium
 sqlparse
 urllib3
+webdriver-manager
