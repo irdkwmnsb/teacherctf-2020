@@ -3,6 +3,11 @@ version: "3"
 services:
   rsp:
     build: .
-    ports:
-      - 127.0.0.1:33016:3000
     restart: always
+    environment:
+      - VIRTUAL_HOST=rsp.ctf.sicamp.ru
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true

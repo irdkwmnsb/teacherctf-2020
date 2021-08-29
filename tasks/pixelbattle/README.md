@@ -5,7 +5,7 @@
 log.txt
 
 ## Флаг
-TeacherCTF{pix3l_battl3_but_1ts_cha0tic}
+SICAMP{pix3l_battl3_but_1ts_cha0tic_hsugehf}
 
 ## Решение
 writeup/solve.py сделает нам видео
