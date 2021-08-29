@@ -9,7 +9,7 @@ CREATE TABLE flag
 );
 
 INSERT INTO flag
-VALUES ('TeacherCTF{n0_eDucation_syst3m_1s_flawle55}');
+VALUES ('SICAMP{n0_eDucation_syst3m_1s_flawle55_hebfyf}');
 
 CREATE TABLE scores
 (

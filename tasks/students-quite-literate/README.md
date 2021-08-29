@@ -4,7 +4,7 @@
 [Ссылка]
 
 ## Флаг
-TeacherCTF{n0_eDucation_syst3m_1s_flawle55}
+SICAMP{n0_eDucation_syst3m_1s_flawle55_hebfyf}
 
 ## Решение
 Классическая sql инъекция. Получить флаг можно сделав запрос

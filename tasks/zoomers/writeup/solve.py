@@ -1,7 +1,7 @@
 earth_alhpabet = 'abcdefghijklmnopqrstuvwxyz{}_ '
 zoom_alphabet = 'zoumna'
 
-encrypted = 'mamuuomonmonznoooouzzoomuuoooouzoznounzooooomuuouzzmmuuzoooomaoznoooouzmuzzzuzuuooooznmznooaumaouzzznmmaoooozumunumaomamooooazznoznouzmuuooomzzuooouzoznounzoomooooozmonuzzzznooounuzzuooomaouuouzzznmmamuuooomznmmaooozznnoazznoznouzmuuuoazznoznouzmuuuoazznoznouzmuuooomzzummmooommuznoooooauznomaoooooozznooomzznuuomaoooouzzoanznounzmaoooooozmonuzzzznooooozznooomuzmuzzmaoooooanuzouuo'
+encrypted = 'zzuunuznmuzzuzmmmzznnmamuuomonmonznouuuoozoomznouzmuuuoazznoznouzmuuummzuuoznommzmonuuommm'
 encrypted = [encrypted[i:i+3] for i in range(0, len(encrypted), 3)]
 
 

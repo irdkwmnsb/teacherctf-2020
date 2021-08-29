@@ -5,7 +5,7 @@
 [Ссылка на сервис]
 
 ## Флаг 
-TeacherCTF{FtsAWLPk6ed4QNQaic7Mew}
+SICAMP{FtsAWLPk6ed4QNQaic7MewKWD}
 
 ## Решение
 Перебор с отсечением.  

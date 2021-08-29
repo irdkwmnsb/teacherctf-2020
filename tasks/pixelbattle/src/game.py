@@ -3,7 +3,7 @@ import numpy as np
 from players import ImagePlayer, ChaoticPlayer
 from PIL import Image
 
-img = qrcode.make("TeacherCTF{pix3l_battl3_but_1ts_cha0tic}", box_size=1, border=0)
+img = qrcode.make("SICAMP{pix3l_battl3_but_1ts_cha0tic_hsugehf}", box_size=1, border=0)
 dest_img = np.array(img)
 cnv = np.zeros(img.size, dtype=np.bool)+1
 
@@ -27,7 +27,7 @@ if __name__ == "__main__":
                 actions.append((x, y, int(col)))
 
 print(len(actions))
-with open("log.txt", "w") as f:
+with open("../files/log.txt", "w") as f:
     print("x,y,col", file=f)
     for action in actions:
         print(*action, sep=',', file=f)

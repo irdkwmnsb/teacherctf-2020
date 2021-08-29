@@ -18,5 +18,5 @@ if __name__ == "__main__":
     enc = input()
     for key in range(0, 26*10//2):
         s = decode(enc, key)
-        if s.startswith(b'TeacherCTF'):
+        if s.startswith(b'SICAMP'):
             print(s.decode())

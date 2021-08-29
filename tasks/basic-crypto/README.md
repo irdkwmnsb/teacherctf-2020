@@ -2,10 +2,10 @@
 
 ## Описание
 
-VmtkV2FGa3lhR3hqYTA1VlVtNTBhVmxYVG5KWU0xSjJXREpLYUdNeWJHcGpNekE5
+VmxSQ2MxSkdSbFpOVmtac1RXdHdiMWRVU2pCYWJWSklUMWRhV21KVldqWlpWbVJQWlcxYVVtSjZNRXNLCg==
 
 ## Решение
 
 "Матрёшка" из трёх base64, необходимо раскодировать при помощи любого онлайн-декодера.
 
-**Флаг:** TeacherCTF{back_to_basics}
+**Флаг:** SICAMP{back_to_basics}

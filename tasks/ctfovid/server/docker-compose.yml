@@ -2,9 +2,14 @@ version: "3"
 services:
   ctfovid:
     image: sebp/lighttpd
-    ports:
-      - 127.0.0.1:33002:80
     volumes:
       - ./root:/var/www/localhost/htdocs
+    environment:
+      - VIRTUAL_HOST=ctfovid.ctf.sicamp.ru
     tty: true
-    restart: always
+    restart: unless-stopped
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true

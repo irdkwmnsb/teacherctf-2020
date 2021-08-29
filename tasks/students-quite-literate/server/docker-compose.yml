@@ -2,11 +2,17 @@ version: '3.3'
 services:
   students-quite-literate:
     build: ./
-    ports:
-      - 127.0.0.1:33011:80
+    environment:
+      - VIRTUAL_HOST=students-quite-literate.ctf.sicamp.ru
+    networks:
+      - proxy
 
   mysql:
     build: ./mysql
     environment:
       MYSQL_ROOT_PASSWORD: susekere
       MYSQL_DATABASE: app
+
+networks:
+  proxy:
+    external: true

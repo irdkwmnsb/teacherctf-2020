@@ -9,4 +9,4 @@ P.s. Если вы используете ОС windows вам возможно �
 
 
 ## Флаг
-```TeacherCTF{nkaOmClQRjqJ1WZNZs5Wag}```
+```SICAMP{nkaOmClQRjqJ1WZNZs5Wagjegffee}```

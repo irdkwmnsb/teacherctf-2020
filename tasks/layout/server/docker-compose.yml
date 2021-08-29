@@ -2,6 +2,11 @@ version: "3"
 services:
   layout:
     build: ./
-    ports:
-      - 127.0.0.1:30023:8080
     restart: always
+    environment:
+      - VIRTUAL_HOST=layout.ctf.sicamp.ru
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true

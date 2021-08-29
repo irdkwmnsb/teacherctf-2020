@@ -6,7 +6,7 @@ e = 65537
 n = 282440654389  
 c = 101890472577
 
-Не забудьте обернуть флаг в ```TeacherCTF{}```!
+Не забудьте обернуть флаг в ```SICAMP{}```!
 
 ## Решение
 
@@ -46,7 +46,7 @@ mpz(52501182389)
 
 Полученное число - это флаг в формате dec (десятичная система счисления). Для удобства можно сначала перевести его [в hex](https://www.rapidtables.com/convert/number/decimal-to-hex.html), а затем уже в [ascii text](https://www.rapidtables.com/convert/number/hex-to-ascii.html).
 
-Полученный текст необходимо обернуть в ```TeacherCTF{}```
+Полученный текст необходимо обернуть в ```SICAMP{}```
 
 
-**Флаг:** TeacherCTF{k3k}
+**Флаг:** SICAMP{k3k}

@@ -7,4 +7,4 @@
 
 Заглянуть в код страницы.
 
-**Флаг:** TeacherCTF{y0u_4r3_1nf3c73d}
+**Флаг:** SICAMP{y0u_4r3_1nf3c73d_qgedhag}

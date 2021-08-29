@@ -38,4 +38,4 @@ users = {u.split(':')[0]:u.split(':')[1] for u in db}
 
 ## Флаг
 
-TeacherCTF{61v3_m3_50m3_lf1_t00_plz}
+SICAMP{61v3_m3_50m3_lf1_t00_plz_ehud}

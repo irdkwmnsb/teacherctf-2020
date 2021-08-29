@@ -11,7 +11,7 @@ with open("log.txt", "r") as f:
 img = Image.new("1", (37, 37), "white")
 for frame_n, line in tqdm.tqdm(enumerate(lines)):
     x, y, col = map(int, line.split(','))
-    img.putpixel((x + 4, y + 4), col)
+    img.putpixel((x + 2, y + 2), col)
     file_name = "frames/%04d.bmp" % frame_n
     img.resize(((37 * 4), (37 * 4))).save(file_name)
 

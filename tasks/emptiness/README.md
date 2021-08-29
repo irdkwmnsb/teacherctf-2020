@@ -10,4 +10,4 @@
 
 Существуют различные онлайн-интерпретаторы whitespace, [вот один из них](https://www.jdoodle.com/execute-whitespace-online/). При запуске программы на экран будет выведен флаг.
 
-**Флаг:** TeacherCTF{m4g1c_0f_wh1735p453}
+**Флаг:** SICAMP{m4g1c_0f_wh1735p453_2nfjeh}

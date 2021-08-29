@@ -52,7 +52,7 @@ with requests.Session() as s:
     p = None
     while True:
         p = s.get(url).text
-        if "TeacherCTF" in p:
+        if "SICAMP" in p:
             break
         else:
             hates = eval(p.split("var hates = ")[-1].split(";")[0])
