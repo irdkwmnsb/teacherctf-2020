@@ -19,8 +19,6 @@ services:
   
   nginx:
     image: nginx:1.17
-    ports:
-      - 127.0.0.1:33008:80
     volumes:
       - ./marks/static:/static
       - ./docker_config/nginx/conf:/etc/nginx/conf.d
